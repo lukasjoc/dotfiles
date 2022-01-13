@@ -10,7 +10,7 @@
 "	                   it would be best to flush`
 ""
 
-set nocompatible
+" set nocompatible
 filetype plugin indent on
 
 " show emty ws
@@ -44,7 +44,7 @@ set incsearch
 set hlsearch
 
 syntax enable
-colorscheme torte
+colorscheme elflord
 
 " this is fore keeping my code in **shape**
 set textwidth=92

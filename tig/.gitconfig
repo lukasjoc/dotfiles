@@ -1,41 +1,64 @@
 [core]
-  autocrlf = false
-  excludesfile = .gitignore
-  quotepath = false
-  editor = vim
+    autocrlf = false
+    excludesfile = .gitignore
+    quotepath = false
+    editor = vim
+    pager = diff-so-fancy | less -R --tabs=4 -RFX
+
+[interactive]
+    diffFilter = diff-so-fancy --patch
 
 [help]
-  autocorrect=1
+    autocorrect=1
 
 [color]
-  diff = auto
-  status = auto
-  branch = auto
-  interactive = auto
-  ui = true
-  pager = true
+    diff = auto
+    status = auto
+    branch = auto
+    interactive = auto
+	ui = true
+    pager = true
 
 [alias]
-  br = branch -vv
-  bra = branch -a
-  ch = checkout
-  st = status
-  diff = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
-  last = log --pretty=oneline -n 20 --graph --abbrev-commit
-  lg = log --color --decorate --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an (%G?)>%Creset' --abbrev-commit
-  contrib = shortlog --summary --numbered
-  env = !git config -l | sort
+    br = branch -vv
+    bra = branch -a
+    ch = checkout
+    st = status
+    diff = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+    last = log --pretty=oneline -n 20 --graph --abbrev-commit
+    lg = log --color --decorate --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an (%G?)>%Creset' --abbrev-commit
+    contrib = shortlog --summary --numbered
+    env = !git config -l | sort
 
 [filter "lfs"]
-  clean = git-lfs clean -- %f
-  smudge = git-lfs smudge -- %f
-  process = git-lfs filter-process
-  required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
 
-# Prefer mergeing
+# Prefer merge commits
 [pull]
-  rebase = false
+    rebase = false
 
 [user]
-  name = lukasjoc
-  email = jochamlu@gmail.com
+    name =
+    email =
+
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+
+[color "diff"]
+	meta = 11
+	frag = magenta bold
+	func = 146 bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+
+[diff-so-fancy]
+    useUnicodeRuler = false
+
