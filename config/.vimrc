@@ -10,53 +10,40 @@
 "	                   it would be best to flush`
 ""
 
-" set nocompatible
+set nocompatible
 filetype plugin indent on
 
 " show emty ws
 set ruler list listchars=tab:\ \ ,trail:.
 
-" ?? Seems imprtant
+" Expanads tabs to 4 spaces
+" And sets the cursors correctly
+set et sw=4 sts=4
 set backspace=indent,eol,start
 
-" Settings for weird filetypes vim does not understand by default
-augroup filetypedetect
-    au BufRead,BufNewFile *.vue setfiletype html
-augroup END
-
-" Indent will be 4 spaces
-set expandtab
-set shiftwidth=4
-set softtabstop=4
-
 " !INFO: this only works if `:set paste` is unset
-set autoindent
+set nopaste autoindent
 
-" AI AND CRYPTO powered with QUANTUM Genetics
-" But written with Rust
+" AI AND CRYPTO powered with QUANTUM Genetics (WTM)
+" But written with Rust. Buy this as an NFT now..
 set ai
 
 " the only thing reliable
 set number
 
-" searching
-set incsearch
-set hlsearch
+" Searching
+set is hls
 
 syntax enable
+set background=dark
 colorscheme elflord
 
-" this is fore keeping my code in **shape**
-set textwidth=92
-set colorcolumn=92
+" this is for keeping my code in **shape**
+set tw=92 cc=92
 
 " reverse visual mode colors
 hi Visual term=reverse cterm=reverse
 
 " print file content after editing
-set t_ti= t_te=
-
-" bells no
-set noeb vb t_vb=
-set vb t_vb=
+set t_ti= t_te= noeb vb t_vb= vb t_vb=
 
