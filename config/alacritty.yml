@@ -1,6 +1,6 @@
 # Alacritty Configuration
-# env:
-#   TERM: xterm-256color
+env:
+  TERM: xterm-256color
 
 alt_send_esc: false
 live_config_reload: true
@@ -27,10 +27,10 @@ scrolling:
 
 decorations: full
 
-fam: &fam "Edlo" # "JetBrains Mono"
-
+# fam: &fam "JetBrains Mono"
+fam: &fam "Monaco"
 font:
-  size: 14
+  size: 12
   normal:
     family: *fam
     style: "Regular"
@@ -47,25 +47,57 @@ font:
 use_thin_strokes: true
 draw_bold_text_with_bright_colors: true
 
-theme: &zenburn-tinker
-  name: zenburntinker
+# Color theme ported from Konsole: Linux colors 
+colors:  
   primary:
-    background: '#3f3f3f'
-    foreground: '#dcdccc'
-  cursor:
-    text: '#000d18'
-    cursor: '#8faf9f'
-  normal:
-    black: "#1f1f1f"
-    red: "#cc9393"
-    green: "#5f7f5f"
-    yellow: "#dfaf8f"
-    blue: "#8cb0d3"
-    magenta: "#dc8cc3"
-    cyan: "#71d3b4"
-    white: "#dfe4cf"
+    foreground: '0xe3e3e3'
+    bright_foreground: '0xffffff'
+    dim_foreground:    '0xe3e3e3'
+    background: '0x000000'
+    bright_background: '0x686868' # not sure
+    dim_background:    '0x1f1f1f' # not sure
 
-colors: *zenburn-tinker
+  cursor:
+    text: '0x191622'
+    cursor: '0xf8f8f2'
+
+  search:
+    matches:
+      foreground: '0xb2b2b2'
+      background: '0xb26818'
+    focused_match:
+      foreground: CellBackground
+      background: CellForeground
+
+  normal:
+    black:   '0x000000'
+    red:     '0xb21818'
+    green:   '0x18b218'
+    yellow:  '0xb26818'
+    blue:    '0x5454ff'
+    magenta: '0xb218b2'
+    cyan:    '0x18b2b2'
+    white:   '0xb2b2b2'
+
+  bright:
+    black:   '0x686868'
+    red:     '0xff5454'
+    green:   '0x54ff54'
+    yellow:  '0xffff54'
+    blue:    '0x5454ff'
+    magenta: '0xff54ff'
+    cyan:    '0x54ffff'
+    white:   '0xffffff'
+
+  dim:
+    black:   '0x000000'
+    red:     '0xb21818'
+    green:   '0x18b218'
+    yellow:  '0xb26818'
+    blue:    '0x1818b2'
+    magenta: '0xb218b2'
+    cyan:    '0x18b2b2'
+    white:   '0xb2b2b2'
 
 bell:
   animation: EaseOutExpo
