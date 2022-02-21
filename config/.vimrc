@@ -16,8 +16,7 @@ filetype plugin indent on
 " show emty ws
 set ruler list listchars=tab:\ \ ,trail:.
 
-" Expanads tabs to 4 spaces
-" And sets the cursors correctly
+" Expands tabs to 4 spaces, sets the cursors correctly
 set et sw=4 sts=4
 set backspace=indent,eol,start
 
@@ -46,5 +45,5 @@ hi Comment cterm=bold
 hi Visual term=reverse cterm=reverse
 
 " print file content after editing
-set t_ti= t_te= noeb vb t_vb= vb t_vb=
+set vb noeb t_ti= t_te= t_vb=
 
