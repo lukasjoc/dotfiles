@@ -10,7 +10,7 @@
 "	                   it would be best to flush`
 ""
 
-set nocompatible
+set nocompatible modifiable
 filetype plugin indent on
 
 " show emty ws
@@ -36,10 +36,11 @@ set is hls
 
 syntax enable
 set background=dark
-colorscheme elflord
+colorscheme torte
 
 " this is for keeping my code in **shape**
 set tw=92 cc=92
+hi Comment cterm=bold
 
 " reverse visual mode colors
 hi Visual term=reverse cterm=reverse
