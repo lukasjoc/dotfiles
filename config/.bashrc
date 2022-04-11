@@ -1,30 +1,42 @@
 #!/bin/bash
 
-bind -x '"\C-l": clear'
-
-# homebrew no auto update
-if command -v brew 2&>/dev/null; then
-  export HOMEBREW_NO_AUTO_UPDATE=1;
-fi
-
-[[ -f "$HOME/private" ]]; source "$HOME/private"
-source "$HOME/.local/bin/minienv/minienv"
-
-PATH="$PATH:$HOME/.local/bin/scripts"
-eval "$(/opt/homebrew/bin/brew shellenv)"
-
-PATH="/opt/homebrew/opt/curl/bin:$PATH"
-
+# Setup Language Support
 
 # Rust
-export RUST_SRC_PATH="$HOME/.cargo"
-export RUSTBIN="$HOME/.cargo/bin"
-PATH=$RUST_SRC_PATH/bin:$PATH
+RUST_SRC_PATH="$HOME/.cargo"
+RUSTBIN="$HOME/.cargo/bin"
+PATH="$RUST_SRC_PATH/bin:$PATH"
 
-# Go and GoMods
-export GOPATH="$HOME/go"
-export GOBIN="$GOPATH/bin"
-export GO111MODULE=on
-PATH=$GOBIN:$PATH
+# Go
+GOPATH="$HOME/go"
+GOBIN="$GOPATH/bin"
+GO111MODULE=on
+PATH="$GOBIN:$PATH"
 
-export PATH
+# Node & NVM
+NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ]; \. "$NVM_DIR/nvm.sh" # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ]; \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Custom Environment, Scripts, and more
+source "$HOME/.local/bin/minienv/minienv"
+PATH="$PATH:$HOME/.local/bin/scripts"
+PATH="$PATH:$HOME/.local/bin/cooldocker"
+PATH="/opt/homebrew/opt/curl/bin:$PATH"
+[[ -f "$HOME/private" ]]; source "$HOME/private"
+
+# What is this ???
+# eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# this is not in my environment config, because on linux this wont work reliably
+bind -x '"\C-l": clear'
+
+export \
+    GOPATH \
+    GOBIN \
+    GO111MODULE \
+    VISUAL \
+    RUST_SRC_PATH \
+    RUSTBIN \
+    NVM_DIR \
+    PATH
