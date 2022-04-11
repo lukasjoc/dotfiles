@@ -1,0 +1,15 @@
+#!/bin/bash
+
+set -xeu
+
+# Copy basic files
+cp $PWD/config/.vimrc $HOME/.vimrc
+cp $PWD/config/.tmux.conf $HOME/.tmux.conf
+cp $PWD/config/.inputrc $HOME/.inputrc
+cp $PWD/config/.profile $HOME/.profile
+cp $PWD/config/.bash_profile $HOME/.bash_profile
+cp $PWD/config/.bashrc $HOME/.bashrc
+cp $PWD/config/alacritty.yml $HOME/.config/alacritty/alacritty.yml
+
+echo "INFO: Copy the Git-Files by hand 🙊"
+

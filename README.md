@@ -1,7 +1,4 @@
 # configs
 
-> configurations
+> Config Files -- Plays nicely with [minienv](https://github.com/lukasjoc/minienv)
 
-Devel Environment:
-
--  https://github.com/lukasjoc/lima-devel-config
