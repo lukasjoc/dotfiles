@@ -1,0 +1,5 @@
+! TT Font and Size
+xterm*faceName: Monospace
+xterm*faceSize: 11
+xterm*background: black
+xterm*foreground: white
