@@ -4,7 +4,6 @@ from libqtile import bar, layout, widget
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
-from libqtile.extension import DmenuRun
 
 dgroups_key_binder = None
 dgroups_app_rules = []  # type: list
@@ -16,21 +15,16 @@ focus_on_window_activation = "smart"
 reconfigure_screens = True
 auto_minimize = False
 wl_input_rules = None
-wmname = "LG3D"
+wmname = "qtile"
 terminal = guess_terminal()
 
 mod = "mod4"
 modShift = [mod, "shift"]
 modControl = [mod, "control"]
 
-TOP_BAR_HEIGHT=18
-BOTTOM_BAR_HEIGHT=22
+TOP_BAR_HEIGHT=20
+BOTTOM_BAR_HEIGHT=18
 
-"""
-execute_dmenu calls `dmenu` with special options
-used as a prompt to search.
-"""
-from libqtile import extension
 keys = [
     Key([mod], "l", lazy.layout.next(), desc="Move window focus to other window"),
     Key(modShift, "h", lazy.layout.grow_left(), desc="Grow window to the left"),
@@ -38,14 +32,13 @@ keys = [
     Key(modShift, "j", lazy.layout.grow_down(), desc="Grow window down"),
     Key(modShift, "k", lazy.layout.grow_up(), desc="Grow window up"),
     Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
-    Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
+    Key([mod], "f", lazy.spawn("firefox"), desc="Launch firefox"),
+    Key([mod], "Return", lazy.spawn(terminal), desc="Launch a terminal"),
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
     Key(modControl, "r", lazy.reload_config(), desc="Reload the config"),
-    # TODO: not only logout qtile session but also shutdown system
     Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
     Key(modControl, "q", lazy.shutdown(), desc="Shutdown Qtile"),
-    # TODO: use dmenu for that
     Key([mod], "space", lazy.spawn("rofi -show run"),
         desc="Spawn a command using dmenu in the prompt"),
 ]
@@ -73,15 +66,14 @@ for workspace in workspaces:
         ]
     )
 
-column_layout_default_args = dict(
-        border_focus=["#6496c8"],
-        border_width=5,
-        margin=2)
-
 layouts = [
     layout.Max(),
-    layout.Columns(**column_layout_default_args),
-    layout.MonadThreeCol(column_layout_default_args),
+    layout.Columns(
+        border_focus=["#6496C8"],
+        border_width=5,
+        margin=2,
+    ),
+    # layout.MonadThreeCol(),
 ]
 
 widget_defaults = dict(font="sans", fontsize=16, padding=4)
