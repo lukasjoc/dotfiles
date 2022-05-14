@@ -23,7 +23,7 @@
     br = branch -vv
     bra = branch -a
     ch = checkout
-    st = status
+    st = status -u
     diff = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
     last = log --pretty=oneline -n 20 --graph --abbrev-commit
     lg = log --color --decorate --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an (%G?)>%Creset' --abbrev-commit
