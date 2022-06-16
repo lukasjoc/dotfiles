@@ -41,17 +41,24 @@ set number
 set is hls
 
 syntax enable
-" set background=dark
-" colorscheme torte
-" colorscheme elflord
-colorscheme desert
+set background=dark
+" colorscheme toast
+" colorscheme desert
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
+" colorscheme badwolf
 
 " this is for keeping my code in **shape**
 set tw=92 cc=92
-hi Comment cterm=bold
+
+" hi Comment cterm=bold
+hi Comment term=italic,bold cterm=italic,bold gui=italic,bold
 
 " reverse visual mode colors
-hi Visual term=reverse cterm=reverse
+hi Visual gui=reverse term=reverse cterm=reverse
 
 " print file content after editing
 set t_ti= t_te= noeb vb t_vb= vb t_vb=
@@ -62,5 +69,11 @@ filetype plugin indent on
 if &filetype ==# 'go'
     set keywordprg=go\ doc
 endif
+if &filetype ==# 'c'
+    " highlight Comment ctermfg=Green guifg=Green
+endif
+
 " Sadly Rust and Nim do not support text based docs
 " which is really saddening
+"
+
