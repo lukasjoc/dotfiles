@@ -53,7 +53,7 @@ set backspace=indent,eol,start
 set nopaste autoindent
 
 " the only thing reliableG
-set number
+" set number
 
 " Searching
 set is hls
@@ -123,8 +123,15 @@ endif
 
 " ----------------------------------------------------------------------------------------
 
-" this is for keeping my code in **shape**
-set tw=92 cc=92
+" Show ColorColumn + set formatting options
+set textwidth=92
+set colorcolumn=92
+" set formatoptions=croql
+hi ColorColumn term=bold cterm=bold ctermbg=16 gui=bold guibg=Grey
+
+" Left Gutter
+set foldcolumn=2
+hi FoldColumn term=none ctermfg=0 ctermbg=0 guifg=Black guibg=Black
 
 " show title
 set ttyfast
@@ -139,4 +146,8 @@ set exrc
 " keep cursor position about where it was while scrolling
 " up or down
 set scrolloff=21
+
+" Remap CTRL-L to also clear search results
+nnoremap <C-L> :nohl<CR><C-L>
+
 
