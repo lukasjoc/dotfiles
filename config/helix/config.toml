@@ -1,0 +1,36 @@
+theme = "monokai"
+
+[editor]
+line-number = "absolute"
+mouse = true
+rulers = [92]
+color-modes = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+parents = true
+ignore = true
+
+[editor.statusline]
+left = ["mode", "spinner", "selections", 'position']
+center = []
+right = [ "diagnostics", "file-encoding", "file-line-ending", "file-type" ]
+separator = "│"
+
+# or control each character
+[editor.whitespace.render]
+space = "all"
+tab = "all"
+newline = "none"
+
+[editor.whitespace.characters]
+space = "·"
+nbsp = "⍽"
+tab = "→"
+newline = "⏎"
+tabpad = "·" # Tabs will look like "→···" (depending on tab width)

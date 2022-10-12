@@ -1,0 +1,12 @@
+
+[[languages]]
+name = 'typescript'
+# eslint --fix --ext=.js,.cjs,.ts,.tsx,.vue ./
+# formatter = {command = "eslint", args = ["--fix", "--ext=.ts", "--config=.eslintrc.cjs"]}
+auto-format = true
+
+[[languages]]
+name = 'javascript'
+# eslint --fix --ext=.js,.cjs,.ts,.tsx,.vue ./
+# formatter = {command = "eslint", args = ["--fix", "--ext=.js,.cjs", "--config=.eslintrc.cjs"]}
+auto-format = true
