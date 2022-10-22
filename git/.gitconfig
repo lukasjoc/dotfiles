@@ -2,11 +2,8 @@
     autocrlf = false
     excludesfile = .gitignore
     quotepath = false
-    editor = vim
-    pager = diff-so-fancy | less -R --tabs=4 -RFX
-
-[interactive]
-    diffFilter = diff-so-fancy --patch
+    editor = nvim
+    pager = less
 
 [help]
     autocorrect=1
@@ -16,7 +13,7 @@
     status = auto
     branch = auto
     interactive = auto
-	ui = true
+    ui = true
     pager = true
 
 [alias]
@@ -45,20 +42,17 @@
     email =
 
 [color "diff-highlight"]
-	oldNormal = red bold
-	oldHighlight = red bold 52
-	newNormal = green bold
-	newHighlight = green bold 22
+    oldNormal = red bold
+    oldHighlight = red bold 52
+    newNormal = green bold
+    newHighlight = green bold 22
 
 [color "diff"]
-	meta = 11
-	frag = magenta bold
-	func = 146 bold
-	commit = yellow bold
-	old = red bold
-	new = green bold
-	whitespace = red reverse
-
-[diff-so-fancy]
-    useUnicodeRuler = false
+    meta = 11
+    frag = magenta bold
+    func = 146 bold
+    commit = yellow bold
+    old = red bold
+    new = green bold
+    whitespace = red reverse
 
