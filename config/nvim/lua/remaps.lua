@@ -1,10 +1,8 @@
-local nnoremap = require("keymaps").nnoremap
+local telescope_builtin = require('telescope.builtin')
 
-nnoremap("<leader>e", "<cmd>Ex<CR>")
-nnoremap("<leader>r", "<cmd>nohl<CR>")
-nnoremap("<leader>f", "<cmd>Telescope find_files<CR>")
-nnoremap("<leader>fo", "<cmd>Telescope oldfiles<CR>")
-nnoremap("<leader>s", "<cmd>Telescope live_grep<CR>")
-nnoremap("<leader>w", "<cmd>Telescope buffers<CR>")
-nnoremap("<leader>h", "<cmd>Telescope help_tags<CR>")
-
+vim.keymap.set('n', '<leader>e', vim.cmd.Explore, {})
+vim.keymap.set('n', '<leader>r', vim.cmd.nohl, {})
+vim.keymap.set('n', '<leader>f', telescope_builtin.find_files, {})
+vim.keymap.set('n', '<leader>g', telescope_builtin.live_grep, {})
+vim.keymap.set('n', '<leader>b', telescope_builtin.buffers, {})
+vim.keymap.set('n', '<leader>h', telescope_builtin.help_tags, {})
