@@ -3,7 +3,6 @@
     excludesfile = .gitignore
     quotepath = false
     editor = nvim
-    pager = less
 
 [help]
     autocorrect=1
@@ -33,13 +32,12 @@
     process = git-lfs filter-process
     required = true
 
-# Prefer merge commits
 [pull]
     rebase = false
 
 [user]
-    name =
-    email =
+    name = lukasjoc
+    email = 45790416+lukasjoc@users.noreply.github.com
 
 [color "diff-highlight"]
     oldNormal = red bold
@@ -55,4 +53,3 @@
     old = red bold
     new = green bold
     whitespace = red reverse
-
