@@ -61,6 +61,8 @@ nnoremap <Leader><Leader>f :Files!<CR>
 nnoremap <Leader><Leader>o :History!<CR>
 nnoremap <Leader><Leader>g :Rg!<CR>
 nnoremap  <S-J> :ALEGoToDefinition<CR>
+nnoremap  <Leader><Leader>re :ALERename<CR>
+nnoremap  <Leader><Leader>ca :ALECodeAction<CR>
 
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
