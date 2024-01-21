@@ -40,7 +40,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_DATA_BIN="$HOME/.local/bin"
-pathadd $XDG_DATA_HOME
+pathadd $XDG_DATA_BIN
 
 export SCRIPTSPATH="$HOME/.local/scripts"
 export SCRIPTSINST="$HOME/.local/scripts/debian"
