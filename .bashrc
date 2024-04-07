@@ -44,7 +44,7 @@ pathadd $XDG_DATA_BIN
 
 export SCRIPTSPATH="$HOME/.local/scripts"
 export SCRIPTSINST="$HOME/.local/scripts/debian"
-. "$HOME/.local/scripts/env"
+. "$HOME/.local/scripts/env-completion"
 pathadd $SCRIPTSPATH
 pathadd $SCRIPTSINST
 
