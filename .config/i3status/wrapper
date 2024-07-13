@@ -1,0 +1,26 @@
+#!/bin/bash
+
+replace_holder() { echo "$bar_json" | jq --argjson arg_j "$2" "(.[] | (select(.instance==\"$1\"))) |= \$arg_j"; }
+remove_holder()  { echo "$bar_json" | jq "del(.[] | (select(.instance==\"$1\")))"; }
+
+uptime_p() {
+    local resp="$(uptime -p)"
+    local json="{"\"full_text\"": "\"$resp"\"}"
+    bar_json=$(replace_holder holder__uptime "$json")
+}
+
+wttr() {
+    local resp="$(curl -sS 'https://wttr.in/munich?d&T&format=%x%20Feels:+%t,%20Actual:%20%20%f%20%w')"
+    local json="{"\"full_text\"": "\"$resp"\"}"
+    bar_json=$(replace_holder holder__wttr "$json")
+}
+
+i3status | (read line; echo "$line"; \
+            read line; echo "$line"; \
+            read line; echo "$line"; while true; do
+    read line
+    bar_json="$(echo $line | sed -e 's/^,//')"
+    uptime_p
+    wttr
+    echo ",$bar_json"
+done)

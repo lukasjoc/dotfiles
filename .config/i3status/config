@@ -1,0 +1,37 @@
+general {
+    output_format = i3bar
+    colors = true
+    interval = 5
+}
+
+load { format = "%5min" }
+# order += "load"
+
+memory {
+    format = "%percentage_used(%used)/%percentage_free(%available)"
+}
+order += "memory"
+
+disk "/" {
+    format = "Free: %free"
+}
+order += "disk /"
+
+tztime holder__uptime { format = "holder__uptime" }
+order += "tztime holder__uptime"
+
+tztime holder__wttr { format = "holder__wttr" }
+order += "tztime holder__wttr"
+
+tztime local {
+    format = "%A, %d %B %X"
+    hide_if_equals_localtime = true
+}
+order += "tztime local"
+
+tztime berlin {
+    format = "%A, %d %B %X"
+    timezone = "Europe/Berlin"
+}
+order += "tztime berlin"
+
